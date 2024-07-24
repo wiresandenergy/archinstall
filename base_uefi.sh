@@ -113,4 +113,6 @@ su wiresandenergy -c "sed -i 's|robbyrussell|cloud|g' ~/.zshrc"
 
 su wiresandenergy -c "sed -i 's|plugins=(git)|plugins=(git\n\t zsh-autosuggestions)|g' ~/.zshrc"
 
+su wiresandenergy -c "yay -S libreoffice-fresh notepadqq keepassxc steam discord handbrake telegram-desktop okular qbittorrent kodi flatpak remmina gparted zoom code shotcut nomachine kamoso konsole alacritty firefox --noconfirm"
+
 printf "\e[1;32mDone! Type exit, umount -a and reboot.\e[0m"
