@@ -16,7 +16,7 @@ echo root:password | chpasswd
 
 pacman -S grub efibootmgr mtools dosfstools git avahi networkmanager dialog sddm acpid network-manager-applet xdg-user-dirs xdg-utils wpa_supplicant cups reflector inetutils base-devel linux-headers linux-firmware zsh iotop htop ntp wget curl nmap figlet bluez bluez-utils && \
 neofetch fuse sudo parted alsa-utils alsa-tools pipewire pipewire-alsa pipewire-pulse pipewire-jack openssh acpi acpi_call flatpak gdisk python3 samba nfs-utils python-pip dnsutils tree openssh bash-completion terminus-font rsync btrfs-progs docker docker-compose && \
-net-tools lsof lshw firewalld fail2ban pacman-contrib man gvfs gvfs-smb hplip tlp virt-manager qemu edk2-ovmf bridge-utils dnsmasq vde2 openbsd-netcat iptables-nft ipset sof-firmware nss-mdns os-prober ntfs-3g plasma
+net-tools lsof lshw firewalld fail2ban pacman-contrib man gvfs gvfs-smb hplip tlp virt-manager qemu edk2-ovmf bridge-utils dnsmasq vde2 openbsd-netcat iptables-nft ipset sof-firmware nss-mdns os-prober ntfs-3g plasma xorg --needed
 
 # pacman -S --noconfirm xf86-video-amdgpu
 # pacman -S --noconfirm nvidia nvidia-utils nvidia-settings
