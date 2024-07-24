@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "figlet $(hostname)
+echo 'figlet $(hostname)
 printf "\n"
 
 printf "Welcome to %s (%s).\n" "$DISTRIB_DESCRIPTION" "$(uname -r)"
@@ -27,4 +27,4 @@ printf "System Load:\t%s\tIP Address:\t%s\n" $load $ip
 printf "Memory Usage:\t%s\tSystem Uptime:\t%s\n" $memory_usage "$time"
 printf "Usage On /:\t%s\tSwap Usage:\t%s\n" $root_usage $swap_usage
 printf "Local Users:\t%s\tProcesses:\t%s\n" $users $processes
-echo" >> /etc/profile.d/motd.sh
+echo' >> /etc/profile.d/motd.sh
