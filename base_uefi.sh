@@ -94,15 +94,13 @@ systemctl enable reflector
 
 pacman -S git base-devel --needed
 
-su wiresandenergy
 cd /home/wiresandenergy
 
-
 git clone https://aur.archlinux.org/yay-bin.git
-cd yay
-makepkg -si
+cd yay-bin
+su wiresandenergy -c 'makepkg -si'
 
-yay -S apache-tools wsdd update-grub timeshift timeshift-autosnap --noconfirm
+su wiresandenergy -c 'yay -S apache-tools wsdd update-grub timeshift timeshift-autosnap --noconfirm'
 
 sudo systemctl enable --now wsdd
 
