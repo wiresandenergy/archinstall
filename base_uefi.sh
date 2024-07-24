@@ -95,8 +95,9 @@ systemctl enable reflector
 pacman -S git base-devel --needed
 
 cd /home/wiresandenergy/
+echo "Changed Directory"
 
-git clone https://aur.archlinux.org/yay-bin.git
+su wiresandenergy - c 'git clone https://aur.archlinux.org/yay-bin.git'
 cd yay-bin
 su wiresandenergy -c 'makepkg -si'
 
