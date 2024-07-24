@@ -19,7 +19,7 @@ pacman -S grub efibootmgr mtools dosfstools git avahi networkmanager dialog sddm
 # pacman -S --noconfirm xf86-video-amdgpu
 # pacman -S --noconfirm nvidia nvidia-utils nvidia-settings
 
-grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB #change the directory to /boot/efi is you mounted the EFI partition at /boot/efi
+grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB #change the directory to /boot/efi is you mounted the EFI partition at /boot/efi
 
 grub-mkconfig -o /boot/grub/grub.cfg
 
@@ -113,6 +113,6 @@ su wiresandenergy -c "sed -i 's|robbyrussell|cloud|g' ~/.zshrc"
 
 su wiresandenergy -c "sed -i 's|plugins=(git)|plugins=(git\n\t zsh-autosuggestions)|g' ~/.zshrc"
 
-su wiresandenergy -c "yay -S libreoffice-fresh notepadqq keepassxc steam discord handbrake telegram-desktop okular qbittorrent kodi flatpak remmina gparted zoom code shotcut nomachine kamoso konsole alacritty firefox --noconfirm"
+su wiresandenergy -c "yay -S libreoffice-fresh notepadqq keepassxc steam discord handbrake telegram-desktop okular qbittorrent kodi flatpak remmina gparted zoom code shotcut nomachine kamoso konsole alacritty firefox nerds-fonts grub-customizer --noconfirm"
 
 printf "\e[1;32mDone! Type exit, umount -a and reboot.\e[0m"
