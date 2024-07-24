@@ -107,4 +107,10 @@ sudo systemctl enable wsdd
 
 su wiresandenergy -c 'sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"'
 
+su wiresandenergy -c "git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions"
+
+su wiresandenergy -c "sed -i 's|robbyrussell|cloud|g' ~/.zshrc"
+
+su wiresandenergy -c "sed -i 's|plugins=(git)|plugins=(git\n\t zsh-autosuggestions)|g' ~/.zshrc"
+
 printf "\e[1;32mDone! Type exit, umount -a and reboot.\e[0m"
