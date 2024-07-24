@@ -94,7 +94,7 @@ systemctl enable reflector
 
 pacman -S git base-devel --needed
 
-cd /home/wiresandenergy
+cd /home/wiresandenergy/
 
 git clone https://aur.archlinux.org/yay-bin.git
 cd yay-bin
