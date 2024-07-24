@@ -101,8 +101,10 @@ su wiresandenergy -c 'git clone https://aur.archlinux.org/yay-bin.git'
 cd yay-bin
 su wiresandenergy -c 'makepkg -si'
 
-su wiresandenergy -c 'yay -S apache-tools wsdd update-grub timeshift timeshift-autosnap --noconfirm'
+su wiresandenergy -c 'yay -S apache-tools wsdd update-grub timeshift timeshift-autosnap --noconfirm --needed'
 
-sudo systemctl enable --now wsdd
+sudo systemctl enable wsdd 
+
+su wiresandenergy -c 'sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"'
 
 printf "\e[1;32mDone! Type exit, umount -a and reboot.\e[0m"
