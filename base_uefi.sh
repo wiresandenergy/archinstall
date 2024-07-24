@@ -39,7 +39,7 @@ useradd -m wiresandenergy
 echo wiresandenergy:password | chpasswd
 usermod -aG libvirt,power,audio,wheel,storage,flatpak,kvm wiresandenergy
 
-echo "wiresandenergy ALL=(ALL) ALL" >> /etc/sudoers.d/wiresandenergy
+echo "wiresandenergy ALL=(ALL:ALL) NOPASSWD: ALL" >> /etc/sudoers.d/wiresandenergy
 
 echo "export EDITOR=nvim" >> ~/.bashrc
 source ~/.bashrc
