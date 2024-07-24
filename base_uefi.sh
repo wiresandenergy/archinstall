@@ -97,7 +97,7 @@ pacman -S git base-devel --needed
 cd /home/wiresandenergy/
 echo "Changed Directory"
 
-su wiresandenergy - c 'git clone https://aur.archlinux.org/yay-bin.git'
+su wiresandenergy -c 'git clone https://aur.archlinux.org/yay-bin.git'
 cd yay-bin
 su wiresandenergy -c 'makepkg -si'
 
