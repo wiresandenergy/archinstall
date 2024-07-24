@@ -41,7 +41,7 @@ usermod -aG libvirt,power,audio,wheel,storage,flatpak,kvm wiresandenergy
 
 echo "wiresandenergy ALL=(ALL) ALL" >> /etc/sudoers.d/wiresandenergy
 
-echo "export EDITOR=nvim" >> ~/.bashrc && \
+echo "export EDITOR=nvim" >> ~/.bashrc
 source ~/.bashrc
 
 cat <<'END_CAT' > /etc/profile.d/motd.sh
@@ -92,11 +92,12 @@ END_CAT
 
 systemctl enable reflector
 
+pacman -S git base-devel --needed
+
 su wiresandenergy
+cd /home/wiresandenergy
 
-cd ~
 
-sudo pacman -S --needed git base-devel
 git clone https://aur.archlinux.org/yay-bin.git
 cd yay
 makepkg -si
