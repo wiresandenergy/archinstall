@@ -34,6 +34,7 @@ systemctl enable fstrim.timer
 systemctl enable libvirtd
 systemctl enable firewalld
 systemctl enable acpid
+systemctl enable sddm
 
 useradd -m wiresandenergy
 echo wiresandenergy:password | chpasswd
