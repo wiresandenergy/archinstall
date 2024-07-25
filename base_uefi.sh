@@ -246,9 +246,9 @@ pacman -S git base-devel --needed
 cd /home/wiresandenergy/
 echo "Changed Directory"
 
-runuser -l wiresandenergy -c 'git clone https://aur.archlinux.org/yay-bin.git'
+su wiresandenergy -c 'git clone https://aur.archlinux.org/yay-bin.git'
 cd yay-bin
-runuser -l wiresandenergy -c 'makepkg -si'
+su wiresandenergy -c 'makepkg -si'
 
 runuser -l wiresandenergy -c 'yay -S apache-tools wsdd update-grub --needed'
 
