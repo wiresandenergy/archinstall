@@ -254,13 +254,13 @@ runuser -l wiresandenergy -c 'yay -S apache-tools wsdd update-grub --needed'
 
 systemctl enable wsdd 
 
-runuser -l wiresandenergy -c 'sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"'
+su wiresandenergy -c 'sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"'
 
-runuser -l wiresandenergy -c "git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions"
+su wiresandenergy -c "git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions"
 
-runuser -l wiresandenergy -c "sed -i 's|robbyrussell|cloud|g' ~/.zshrc"
+su wiresandenergy -c "sed -i 's|robbyrussell|cloud|g' ~/.zshrc"
 
-runuser -l wiresandenergy -c "sed -i 's|plugins=(git)|plugins=(git\n\t zsh-autosuggestions)|g' ~/.zshrc"
+su wiresandenergy -c "sed -i 's|plugins=(git)|plugins=(git\n\t zsh-autosuggestions)|g' ~/.zshrc"
 
 runuser -l wiresandenergy -c "yay -S libreoffice-fresh notepadqq keepassxc steam discord handbrake telegram-desktop okular qbittorrent kodi flatpak remmina gparted zoom code shotcut nomachine kamoso konsole kitty nerds-fonts grub-customizer swtpm stow mkinitcpio-firmware thunderbird --needed"
 
