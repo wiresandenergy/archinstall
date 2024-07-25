@@ -14,7 +14,13 @@ echo root:password | chpasswd
 # You can add xorg to the installation packages, I usually add it at the DE or WM install script
 # You can remove the tlp package if you are installing on a desktop or vm
 
-pacman -S grub efibootmgr mtools dosfstools git avahi networkmanager dialog sddm acpid network-manager-applet xdg-user-dirs xdg-utils wpa_supplicant cups reflector inetutils base-devel linux-headers linux-firmware zsh iotop htop ntp wget curl nmap figlet bluez bluez-utils neofetch fuse sudo parted alsa-utils alsa-tools pipewire pipewire-alsa pipewire-pulse pipewire-jack openssh acpi acpi_call flatpak gdisk python3 samba nfs-utils python-pip dnsutils tree openssh bash-completion terminus-font rsync btrfs-progs docker docker-compose net-tools lsof lshw firewalld fail2ban pacman-contrib man gvfs gvfs-smb hplip tlp virt-manager qemu edk2-ovmf bridge-utils dnsmasq vde2 openbsd-netcat iptables-nft ipset sof-firmware nss-mdns os-prober ntfs-3g plasma tk pyenv libreoffice-fresh  --needed
+sed -i 's/#Color/Color/' /etc/pacman.conf
+sed -i 's/#ParallelDownloads = 5/ParallelDonwloads = 10 \nILoveCandy/' /etc/pacman.conf
+sed -i 's/#\[multilib]/\[multilib]\nInclude = \/etc\/pacman.d\/mirrorlist/' /etc/pacman.conf
+
+
+
+pacman -S grub efibootmgr mtools dosfstools git avahi networkmanager dialog sddm acpid network-manager-applet xdg-user-dirs xdg-utils wpa_supplicant cups reflector inetutils base-devel linux-headers linux-firmware zsh iotop htop ntp wget curl nmap figlet bluez bluez-utils neofetch fuse sudo parted alsa-utils alsa-tools pipewire pipewire-alsa pipewire-pulse pipewire-jack openssh acpi acpi_call flatpak gdisk python3 samba nfs-utils python-pip dnsutils tree openssh bash-completion terminus-font rsync btrfs-progs docker docker-compose net-tools lsof lshw firewalld fail2ban pacman-contrib man gvfs gvfs-smb hplip tlp virt-manager qemu edk2-ovmf bridge-utils dnsmasq vde2 openbsd-netcat iptables-nft ipset sof-firmware nss-mdns os-prober ntfs-3g plasma tk pyenv libreoffice-fresh kate konsole kitty thunar catfish gvfs tumbler thunar-volman thunar-archive-plugin thunar-media-tags-plugin --needed
 
 # pacman -S --noconfirm xf86-video-amdgpu
 # pacman -S --noconfirm nvidia nvidia-utils nvidia-settings
@@ -115,5 +121,7 @@ su wiresandenergy -c "sed -i 's|robbyrussell|cloud|g' ~/.zshrc"
 su wiresandenergy -c "sed -i 's|plugins=(git)|plugins=(git\n\t zsh-autosuggestions)|g' ~/.zshrc"
 
 su wiresandenergy -c "yay -S libreoffice-fresh notepadqq keepassxc steam discord handbrake telegram-desktop okular qbittorrent kodi flatpak remmina gparted zoom code shotcut nomachine kamoso konsole alacritty firefox nerds-fonts grub-customizer --noconfirm"
+
+su wiresandenergy -c 'yay -S timeshift timeshift-autosnap --noconfirm --needed'
 
 printf "\e[1;32mDone! Type exit, umount -a and reboot.\e[0m"
