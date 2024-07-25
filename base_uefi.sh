@@ -20,7 +20,7 @@ echo root:$install_pass | chpasswd
 # You can remove the tlp package if you are installing on a desktop or vm
 
 sed -i 's/#Color/Color/' /etc/pacman.conf
-sed -i 's/#ParallelDownloads = 5/ParallelDonwloads = 10 \nILoveCandy/' /etc/pacman.conf
+sed -i 's/#ParallelDownloads = 5/ParallelDownloads = 10 \nILoveCandy/' /etc/pacman.conf
 sed -i 's/#\[multilib]/\[multilib]\nInclude = \/etc\/pacman.d\/mirrorlist/' /etc/pacman.conf
 
 pacman -Syyu --noconfirm
