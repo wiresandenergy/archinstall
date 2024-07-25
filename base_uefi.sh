@@ -254,14 +254,6 @@ runuser -l wiresandenergy -c 'yay -S apache-tools wsdd update-grub --needed'
 
 systemctl enable wsdd 
 
-su wiresandenergy -c 'sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"'
-
-su wiresandenergy -c "git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions"
-
-su wiresandenergy -c "sed -i 's|robbyrussell|cloud|g' ~/.zshrc"
-
-su wiresandenergy -c "sed -i 's|plugins=(git)|plugins=(git\n\t zsh-autosuggestions)|g' ~/.zshrc"
-
 runuser -l wiresandenergy -c "yay -S libreoffice-fresh notepadqq keepassxc steam discord handbrake telegram-desktop okular qbittorrent kodi flatpak remmina gparted zoom code shotcut nomachine kamoso konsole kitty nerds-fonts grub-customizer swtpm stow mkinitcpio-firmware thunderbird --needed"
 
 mkdir -p /etc/sddm.conf.d/
@@ -277,5 +269,13 @@ END_CAT
 chown wiresandenergy:wiresandenergy /home/wiresandenergy/.config/kwalletrc
 
 runuser -l wiresandenergy -c 'yay -S timeshift timeshift-autosnap --noconfirm --needed'
+
+su wiresandenergy -c 'sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"'
+
+su wiresandenergy -c "git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions"
+
+su wiresandenergy -c "sed -i 's|robbyrussell|cloud|g' ~/.zshrc"
+
+su wiresandenergy -c "sed -i 's|plugins=(git)|plugins=(git\n\t zsh-autosuggestions)|g' ~/.zshrc"
 
 printf "\e[1;32mDone! Type exit, umount -a and reboot.\e[0m"
