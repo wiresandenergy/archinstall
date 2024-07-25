@@ -1,5 +1,8 @@
 #!/bin/bash
 
+echo "Enter hostname: "
+read install_hostname
+
 ln -sf /usr/share/zoneinfo/America/Denver /etc/localtime
 hwclock --systohc
 sed -i 's/#en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen
@@ -9,9 +12,9 @@ echo "KEYMAP=us" >> /etc/vconsole.conf
 echo "arch" >> /etc/hostname
 echo "127.0.0.1 localhost" >> /etc/hosts
 echo "::1       localhost" >> /etc/hosts
-echo "127.0.1.1 arch.gordonia.net arch" >> /etc/hosts
+echo "127.0.1.1 $install_hostname.gordonia.net $install_hostname" >> /etc/hosts
 
-echo "Enter desired password: "
+echo "Enter password: "
 read install_pass
 
 echo root:$install_pass | chpasswd
@@ -235,6 +238,28 @@ cat <<'END_CAT' > /etc/samba/smb.conf
    guest ok = no
    writable = no
    printable = yes
+END_CAT
+
+cat <<'END_CAT' > /etc/nsswitch.conf
+# Name Service Switch configuration file.
+# See nsswitch.conf(5) for details.
+
+passwd: files systemd
+group: files [SUCCESS=merge] systemd
+shadow: files systemd
+gshadow: files systemd
+
+publickey: files
+
+hosts: mymachines mdns_minimal [NOTFOUND=return] resolve [!UNAVAIL=return] files myhostname dns
+networks: files
+
+protocols: files
+services: files
+ethers: files
+rpc: files
+
+netgroup: files
 END_CAT
 
 systemctl enable smb
