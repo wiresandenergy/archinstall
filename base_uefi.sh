@@ -237,6 +237,9 @@ cat <<'END_CAT' > /etc/samba/smb.conf
    printable = yes
 END_CAT
 
+systemctl enable smb
+systemctl enable nmb
+
 usermod -aG power,audio,video,storage,wheel,flatpak,libvirt,libvirt-qemu,games,kvm,rfkill,docker wiresandenergy
 
 systemctl enable reflector
