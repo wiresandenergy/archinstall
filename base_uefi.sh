@@ -246,28 +246,28 @@ pacman -S git base-devel --needed
 cd /home/wiresandenergy/
 echo "Changed Directory"
 
-su wiresandenergy -c 'git clone https://aur.archlinux.org/yay-bin.git'
+runuser -l wiresandenergy -c 'git clone https://aur.archlinux.org/yay-bin.git'
 cd yay-bin
-su wiresandenergy -c 'makepkg -si'
+runuser -l wiresandenergy -c 'makepkg -si'
 
-su wiresandenergy -c 'yay -S apache-tools wsdd update-grub --needed'
+runuser -l wiresandenergy -c 'yay -S apache-tools wsdd update-grub --needed'
 
-sudo systemctl enable wsdd 
+systemctl enable wsdd 
 
-su wiresandenergy -c 'sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"'
+runuser -l wiresandenergy -c 'sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"'
 
-su wiresandenergy -c "git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions"
+runuser -l wiresandenergy -c "git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions"
 
-su wiresandenergy -c "sed -i 's|robbyrussell|cloud|g' ~/.zshrc"
+runuser -l wiresandenergy -c "sed -i 's|robbyrussell|cloud|g' ~/.zshrc"
 
-su wiresandenergy -c "sed -i 's|plugins=(git)|plugins=(git\n\t zsh-autosuggestions)|g' ~/.zshrc"
+runuser -l wiresandenergy -c "sed -i 's|plugins=(git)|plugins=(git\n\t zsh-autosuggestions)|g' ~/.zshrc"
 
-su wiresandenergy -c "yay -S libreoffice-fresh notepadqq keepassxc steam discord handbrake telegram-desktop okular qbittorrent kodi flatpak remmina gparted zoom code shotcut nomachine kamoso konsole kitty nerds-fonts grub-customizer swtpm stow mkinitcpio-firmware thunderbird --needed"
+runuser -l wiresandenergy -c "yay -S libreoffice-fresh notepadqq keepassxc steam discord handbrake telegram-desktop okular qbittorrent kodi flatpak remmina gparted zoom code shotcut nomachine kamoso konsole kitty nerds-fonts grub-customizer swtpm stow mkinitcpio-firmware thunderbird --needed"
 
 mkdir -p /etc/sddm.conf.d/
 cp /usr/lib/sddm/sddm.conf.d/default.conf /etc/sddm.conf.d/arch.conf
 
-su wiresandenergy -c "mkdir -p /home/wiresandenergy/.config"
+runuser -l wiresandenergy -c "mkdir -p /home/wiresandenergy/.config"
 
 cat <<'END_CAT' > /home/wiresandenergy/.config/kwalletrc
 [Wallet]
@@ -276,6 +276,6 @@ END_CAT
 
 chown wiresandenergy:wiresandenergy /home/wiresandenergy/.config/kwalletrc
 
-su wiresandenergy -c 'yay -S timeshift timeshift-autosnap --noconfirm --needed'
+runuser -l wiresandenergy -c 'yay -S timeshift timeshift-autosnap --noconfirm --needed'
 
 printf "\e[1;32mDone! Type exit, umount -a and reboot.\e[0m"
