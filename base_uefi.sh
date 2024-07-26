@@ -282,7 +282,7 @@ runuser -l wiresandenergy -c 'yay -S apache-tools wsdd update-grub --needed'
 
 systemctl enable wsdd 
 
-runuser -l wiresandenergy -c "yay -S libreoffice-fresh notepadqq keepassxc steam discord handbrake telegram-desktop okular qbittorrent kodi flatpak remmina gparted zoom code shotcut nomachine kamoso konsole kitty nerd-fonts grub-customizer swtpm stow mkinitcpio-firmware thunderbird --needed"
+runuser -l wiresandenergy -c "yay -S libreoffice-fresh notepadqq keepassxc steam discord handbrake telegram-desktop okular qbittorrent kodi flatpak remmina gparted zoom code shotcut nomachine kamoso konsole kitty nerd-fonts grub-customizer swtpm stow mkinitcpio-firmware thunderbird insync ffmpeg --needed"
 
 mkdir -p /etc/sddm.conf.d/
 cp /usr/lib/sddm/sddm.conf.d/default.conf /etc/sddm.conf.d/arch.conf
